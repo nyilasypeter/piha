@@ -1,4 +1,4 @@
-# Javulna
+# Piha
 
 ## Table of Contents
 1. [Introduction](#Introduction)
@@ -121,9 +121,9 @@ Authenticated users can change the theme of their application. However this func
 
 **Detailed description**
 Once logged in you can change the color-theme of the app at Profile->My Profile. Check what changes in the HTML source-code when you change your theme.  
-If you have an idea now how to hack it, go for it. You can access several sensitive data by exploiting this vulnerability.  
+If you have an idea now how to hack it, go for it! You can access several sensitive data by exploiting this vulnerability.  
 If you don't find the vulnerability check the user/myprofile.php file!  
-Finally fixt the vulnerability!
+Finally fix the vulnerability!
 
 
 
