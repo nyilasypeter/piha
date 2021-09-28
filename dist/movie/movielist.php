@@ -46,6 +46,7 @@ function appendCondition(&$sql, $conditions)
 <html>
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/movie.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
     <?=getMyTheme()?>
@@ -79,13 +80,40 @@ function appendCondition(&$sql, $conditions)
       </div>
 
       <p>
-        <button class="w3-btn w3-theme">Filter</button>
+        <button class="w3-btn w3-theme" <?=hideIfNotLoggedIn()?>>Filter</button>
+        <button class="w3-btn w3-theme" id="newMovieButton" onclick="return false;">New movie</button>
       </p>
 
     </form>
 
-    <table class="w3-table-all w3-striped">
-      <tr>
+    <div id="newMovieForm" style="display: none;">
+    <h1>Add a new movie to the database!</h1>
+    <div class="w3-row-padding">
+        <div class="w3-half">
+          <label class="w3-text-theme"><b>Id</b></label>
+          <input class="w3-input w3-border" name="newMovieId" id="newMovieId"  type="text">
+        </div>
+        <div class="w3-half">
+          <label class="w3-text-theme"><b>Title</b></label>
+          <input class="w3-input w3-border" name="newMovieTitle" id="newMovieTitle"  type="text">
+        </div>
+        <div class="w3-half">
+          <label class="w3-text-theme"><b>Description</b></label>
+          <input class="w3-input w3-border" name="newMovieDesc" id="newMovieDesc"  type="text">
+        </div>
+        <div class="w3-half">
+          <label class="w3-text-theme"><b>Genre</b></label>
+          <input class="w3-input w3-border" name="newMovieGenre" id="newMovieGenre"  type="text">
+        </div>
+      </div>
+      <p>
+        <button class="w3-btn w3-theme" id="addMovieButton">Add</button>
+      </p>
+    </div>
+
+
+    <table class="w3-table-all w3-striped" id="movieTable">
+      <tr id="movieTableHead">
         <th class="w3-theme">Id</th>
         <th class="w3-theme">Title</th>
         <th class="w3-theme">Genre</th>
