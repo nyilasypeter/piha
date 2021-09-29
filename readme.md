@@ -133,5 +133,7 @@ Finally fix the vulnerability!
 The movie/movielist.php suffers from XSS vulnerability. Find it and fix it!
 
 **Detailed description**  
-Find all the XSS vulnerabilities at movie/movielist.php!   
-Fix them!
+Find all the XSS vulnerabilities at movie/movielist.php!  
+You can find both a client (DOM based) and a server (non-DOM based) XSS. Find both!  
+Which one is more dangerous here? Why? (How would you exploit them?)  
+Fix both of them!
