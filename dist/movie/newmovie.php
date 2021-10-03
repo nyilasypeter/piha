@@ -19,8 +19,8 @@ if (
         }
     }
     $id = ! empty($movie["id"]) ? $movie["id"] : uniqid();
-    $statement = $db->prepare("insert into movie(id, title, description, genre) VALUES (:id, :title, :desc, :genre)");
-    $movieArray = ["id" => $id, "title" => $movie["title"], "desc" => $movie["description"], "genre" => $movie["genre"]];
+    $statement = $db->prepare("insert into movie(id, title, description, genre) VALUES (:id, :title, :description, :genre)");
+    $movieArray = ["id" => $id, "title" => $movie["title"], "description" => $movie["description"], "genre" => $movie["genre"]];
     $statement->execute($movieArray);
     echo (json_encode($movieArray));
 } else {
