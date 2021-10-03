@@ -7,9 +7,12 @@
     1.  [Exercise 1 - Find users of the app and their password](#Exercise_1)
      1. [Exercise 2 - Change another user's password](#Exercise_2)
      1. [Exercise 3 - File handling](#Exercise_3)
-     1. [Exercise 4 – File handling (upload)](#Exercise_4)
-     1. [Exercise 5 – URL handling](#Exercise_5)
-     1. [Exercise 6- XSS](#Exercise_6)
+     1. [Exercise 4 - File handling (upload)](#Exercise_4)
+     1. [Exercise 5 - URL handling](#Exercise_5)
+     1. [Exercise 6 - XSS](#Exercise_6)
+     1. [Exercise 7 - CSRF](#Exercise_7)
+     1. [Exercise 6 - Weak authentication](#Exercise_8)
+     1. [Exercise 9 - Weak authorization](#Exercise_9)
 
 <a name="Introduction"></a>
 ## Introduction 
@@ -130,11 +133,46 @@ Finally fix the vulnerability!
 <a name="Exercise_6"></a>
 ### Exercise 6 – XSS
 **Short Description**
-The movie/movielist.php suffers from XSS vulnerability. Find it and fix it!
+The movie/movielist.php suffers from several XSS vulnerabilities. Find and fix them!
 
 **Detailed description**  
 Find all the XSS vulnerabilities at movie/movielist.php!  
 You will have to be logged in to exploit the vulnerabilities.  
-You can find both a client (DOM based) and a server (non-DOM based) XSS. Find both!  
+You can find client and server, sotred and refelected XSS. Try to find and categorize all of them!  
 Which one is more dangerous here? Why? (How would you exploit them?)  
-Fix both of them!
+Fix all that you found!
+
+<a name="Exercise_7"></a>
+### Exercise 7 – CSRF
+**Short Description**  
+Find CSRF vulnerabilities within the application.
+
+**Detailed description**  
+The piha application has no CSRF defense. Find screens where an http POST request is made, and try to exploit the CSRF vulnerability.  
+In order to exploit it you will have to make another PHP code hosted on a different server (or for simplicity you can also host it on the same server under a different context root). This will be the crafted page that an attacker would create.  
+Login to PIHA and load the crafted page. See that the exploit works.  
+Fix the code! Which strategy did you choose? Why? Check that it works by trying to use the same exploit page!
+
+<a name="Exercise_8"></a>
+### Exercise 8 – Weak authentication
+**Short Description**
+Find vulnerabilities within the application's authentication system!
+
+**Detailed description**  
+The application has a weak authentication system. Check the source-code (login.php) and describe what problems you find!  
+What would you do to fix these vulnerabilities?
+
+<a name="Exercise_9"></a>
+### Exercise 9 – Weak authorization
+**Short Description**
+Find vulnerabilities within the application's authorization system!
+
+**Detailed description**  
+The application has a very simple authorization system. It distinguishes only between two states: logged in and not logged in.  
+If the user is not logged in only the movielis.php is available, and even that is only with a limited content (viewing the movie db is possible, but adding new movies is disabled).  
+Once a user logged in she can reach every feature.  
+See how this is coded by checking the source-code.  
+Authorization-related functions are located in the common/common.php file is several functions.  
+Check how these functions are used in other php files!  
+Discuss what would you improve here!  
+Fix the problematic codes!   
